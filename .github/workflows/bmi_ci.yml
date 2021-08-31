@@ -1,4 +1,4 @@
-name: BMI_CI
+name: BMI_CI                                        # "BMI_CI" workflow
 
 env:
   AZURE_WEBAPP_NAME: gc-bmicalculator-ga            # set this to your application's name
@@ -11,8 +11,8 @@ on:
  
 
 jobs:
-  build:
-    runs-on: windows-latest
+  build:                                            # "build" job
+    runs-on: windows-latest                         # runner
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core SDK
