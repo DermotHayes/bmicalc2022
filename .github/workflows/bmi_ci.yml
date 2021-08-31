@@ -23,6 +23,13 @@ jobs:
       run: dotnet build --configuration Release
     - name: Run unit tests
       run: dotnet test bmiUnitTestProject/bmiUnitTestProject.csproj --no-restore --collect "Code coverage"
+    - name: Publish Unit Test Results
+      uses: dorny/test-reporter@v1
+      with:
+        artifact: test-results            # artifact name
+        name: MS Tests                  # Name of the check run which will be created
+        path: '*.xml'                     # Path to test results (inside artifact .zip)
+
     - name: Publish
       run: dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
 
