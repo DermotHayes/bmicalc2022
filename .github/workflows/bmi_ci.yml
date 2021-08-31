@@ -28,8 +28,8 @@ jobs:
       uses: dorny/test-reporter@v1
       with:
         artifact: ''
-        name: MS Tests                  # Name of the check run which will be created
-        path: '**TestResults\*.trx'
+        name: MS Tests                  
+        path: '**.trx'
         reporter: 'dotnet-trx'                     
 
     - name: Publish
