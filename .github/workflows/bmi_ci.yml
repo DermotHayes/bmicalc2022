@@ -29,7 +29,7 @@ jobs:
       with:
         artifact: ''
         name: MS Tests                  # Name of the check run which will be created
-        path: 'TestResults/TestOutput.xml'
+        path: '**TestResults\*.trx'
         reporter: 'dotnet-trx'                     
 
     - name: Publish
